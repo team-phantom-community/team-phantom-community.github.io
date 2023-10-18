@@ -1,3 +1,3 @@
-# team-phantom-community.github.io
+# team-phantom-community
 
 - Hello World
