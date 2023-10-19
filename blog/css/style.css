@@ -4,7 +4,7 @@ h1 {
 	size: 35pt;
 }
 h2 {
-    color: #c7c8c9;
+    color: rgb(210, 184, 136);
     size: 30pt;
 }
 h3 {
@@ -15,10 +15,7 @@ h4 {
     color: #c7c8c9;
     size: 20pt;
 }
-hr{
-    color: chartreuse;
-    height: 6px;
-}
+
 body {
     color: white;
     background-color: black;
