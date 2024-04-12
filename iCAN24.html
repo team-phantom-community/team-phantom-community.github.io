@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>team phantom iCAN23</title>
+    <title>team phantom iCAN24</title>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet" />
 </head>
@@ -30,10 +30,41 @@
             <a href="./image/iCAN24_top.png"><img src="./image/iCAN24_top.png"></a>
         </div>
         <div>
+            <a href="./image/iCAN24_sklearn_model.PNG"><img src="./image/iCAN24_sklearn_model.PNG"></a>
+        </div>
+        <div>
+            <a href="./image/iCAN24_test.png"><img src="./image/iCAN24_test.png"></a>
+        </div>
+        <div>
             <a href="./image/iCAN24_sub.PNG"><img src="./image/iCAN24_sub.PNG"></a>
         </div>
     </div>
 
+    <hr>
+    
+    <h3>ハードウェア構成</h3>
+    <p>Phoxのメイン機能であるカメラの部分は市販のESP-cameraを参考に完全自作としている。</p>
+    <p>メインコンピュータとしてESP32-S3、カメラにはOV5640を用いた。</p>
+    <p>スケルトンモデルは以下の図のようになっている。</p>
+    <div style="text-align: center">
+        <a href="./image/iCAN24_main-board_transpearent.png"><img src="./image/iCAN24_main-board_transpearent.png" alt="transpearent_model" width="80%"></a>
+    </div>
+    <p>このボードの特徴は何といってもそのサイズであろう。基板層数は四層とし、限りなく部品を集積した基板である。自作した基板だからこそできるサイズ感である。</p>
+    <p>これらの努力により、メインボードは旧基板と比較して面積比で50%の小型化に成功した。</p>
+    <p>ドアスイッチ側サブモジュールについても極力小型化を意識し、磁気センサ、測距センサを両方とも搭載しながら3cm x 2cm以下のサイズに収めている。</p>
+    
+    <div class="scr_img">
+        <div>
+            <a href="./image/iCAN24_circuit.jpg"><img src="./image/iCAN24_circuit.jpg"></a>
+        </div>
+        <div>
+            <a href="./image/iCAN24_MB.jpg"><img src="./image/iCAN24_MB.jpg" ></a>
+        </div>
+        <div>
+            <a href="./image/iCAN24_compear.jpg"><img src="./image/iCAN24_compear.jpg"></a>
+        </div>
+    </div>
+    <p>詳しい情報については<a href="https://github.com/team-phantom-community/Phox_Hardware" style="color: aqua;">こちらのリポジトリ</a>に記載されているので参考にしていただきたい</p>
     <hr>
     
     <h3>システム構成</h3>
@@ -44,15 +75,19 @@
         <li>AWS S3に保存された画像を画像認識するプログラム</li>
         <li>画像認識によって得られた結果に応じてメールを送信するシステム</li>
     </ul>
-    <p>これらを一つにシステムにまとめたシステム構成図は以下の通りだ。</p>    <div style="text-align: center">
+    <p>これらを一つにシステムにまとめたシステム構成図は以下の通りだ。</p>
+    <div style="text-align: center">
         <a href="./image/iCAN24_AWSsystem.png"><img src="./image/iCAN24_AWSsystem.png" alt="AWS_system" width="80%"></a>
     </div>
-    <p>詳しい情報については<a href="https://github.com/team-phantom-community/Phox-AWS-code">こちらのリポジトリ</a>に記載されているので参考にしていただきたい</p>
-    
+    <p>Phoxシステムによって送られるメールには、1.開閉通知、2.画像認識結果、3.現在のバッテリー電圧、が記載される。</p>
+    <p>この画像認識は現状では、空・書類(白い物品)・荷物(茶色い物品)の三種類の認識を行う。</p>
+    <p>XGBoost法と呼ばれる機械学習のアルゴリズムを用いて作成した、学習済みの画像認識モデルを作成し画像認識を行っている。</p>
+    <p>画像認識精度は環境にも依存するが、一般的な暗室タイプの郵便受けであれば95%程度の認識精度を保証する。</p>
+    <div style="text-align: center">
+        <a href="./image/iCAN24_mail.PNG"><img src="./image/iCAN24_mail.PNG" alt="text mail" width="80%"></a>
+    </div>
+    <p>詳しい情報については<a href="https://github.com/team-phantom-community/Phox-AWS-code" style="color: aqua;">こちらのリポジトリ</a>に記載されているので参考にしていただきたい</p>
     <hr>
-    
-    <h3>Coming Soon</h3>
-
 
     <hr>
     <h4>contact us</h4>
